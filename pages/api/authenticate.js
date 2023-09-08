@@ -17,7 +17,7 @@ export default function handler(req, res) {
 
   // User signed in before, but access token expired
   if (access_token === undefined) {
-    let url = `https://api.miro.com/v1/oauth/token?grant_type=refresh_token&client_id=${process.env.clientID}&client_secret=${process.env.clientSecret}&refresh_token=${refresh_token}`;
+    let url = `https://api.miro.com/v1/oauth/token?grant_type=refresh_token&client_id=${process.env.REACT_APP_CLIENT_ID}&client_secret=${process.env.REACT_APP_CLIENT_SECRET}&refresh_token=${refresh_token}`;
 
     async function refreshToken() {
       try {
