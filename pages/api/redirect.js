@@ -6,7 +6,7 @@ export default function handler(req, res) {
   let refresh_token;
 
   if (req.query.code) {
-    let url = `https://api.miro.com/v1/oauth/token?grant_type=authorization_code&client_id=${process.env.REACT_APP_CLIENT_ID}&client_secret=${process.env.REACT_APP_CLIENT_SECRET}&code=${req.query.code}&redirect_uri=${process.env.REACT_APP_REDIRECT_URL}`;
+    let url = `https://api.miro.com/v1/oauth/token?grant_type=authorization_code&client_id=${process.env.clientID}&client_secret=${process.env.clientSecret}&code=${req.query.code}&redirect_uri=${process.env.redirectURL}`;
 
     async function grabToken() {
       try {
